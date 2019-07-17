@@ -11,7 +11,11 @@ import (
 
 // Complete the aVeryBigSum function below.
 func aVeryBigSum(ar []int64) int64 {
-
+	var sum int64 = 0
+	for i := range ar {
+		sum += ar[i]
+	}
+	return sum
 }
 
 func main() {
