@@ -58,3 +58,65 @@ func readLine(reader *bufio.Reader) string {
 	}
 	return strings.TrimRight(string(str), "\r\n")
 }
+
+/*
+package main
+
+import (
+	"bufio"
+	"fmt"
+	"io"
+	"os"
+	"strconv"
+	"strings"
+)
+
+func calc(arr [][]int64, point []int64, n int , q int) {
+	isVisited := make([]bool, n)
+	for i := range arr{
+		if isVisited[i] || len(arr[i]) == 0{
+			continue
+		}
+		isVisited[i] = true
+		for j := range arr[i]{
+			point[arr[i][j]] += point[i]
+		}
+	}
+	for i := range point{
+		fmt.Print(point[i])
+		fmt.Print(" ")
+	}
+}
+
+func main() {
+	reader := bufio.NewReaderSize(os.Stdin, 1024*1024)
+	strArr := strings.Split(readLine(reader), " ")
+	n, _ := strconv.Atoi(strArr[0])
+	q, _ := strconv.Atoi(strArr[1])
+	arr := make([][]int64, n)
+	point := make([]int64, n)
+
+	for i := 0; i< n-1; i++ {
+		strArr = strings.Split(readLine(reader), " ")
+		tmpA, _ := strconv.ParseInt(strArr[0],10,64)
+		tmpB, _ := strconv.ParseInt(strArr[1],10,64)
+		arr[tmpA-1] = append(arr[tmpA-1], tmpB-1)
+	}
+	for i := 0; i< q; i++ {
+		strArr = strings.Split(readLine(reader), " ")
+		tmpP, _ := strconv.Atoi(strArr[0])
+		tmpX, _ := strconv.ParseInt(strArr[1],10,64)
+		point[tmpP-1] += tmpX
+	}
+	calc(arr, point, n, q)
+}
+
+func readLine(reader *bufio.Reader) string {
+	str, _, err := reader.ReadLine()
+	if err == io.EOF {
+		return ""
+	}
+	return strings.TrimRight(string(str), "\r\n")
+}
+
+ */
